@@ -11,6 +11,7 @@ program ejemplo {
   game.addVisual(lataDeCerveza)
   game.addVisual(barrilDeCombustible)
   game.addVisual(plantaDeTratamiento)
+  game.addVisual(bolaDePapel)
   game.addVisualCharacter(capy)
   
   game.onCollideDo(capy, { elemento =>
@@ -23,6 +24,12 @@ program ejemplo {
     game.say(barrilDeCombustible, "El barril ahora tiene: " + barrilDeCombustible.combustibleActual().sufijo() )
   })
   
+  // Mover bola de  papel de lado a lado
+  game.onTick(1000, "Moverse cada 1 seg", {
+    bolaDePapel.moverLado()
+    }
+  )
+
   keyboard.h().onPressDo(
     {
       game.schedule(2000,{ 
