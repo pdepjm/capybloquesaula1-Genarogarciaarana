@@ -62,8 +62,37 @@ object barrilDeCombustible {
   
   method combustibleActual() = combustibleActual
   
+
+
   method colisionarCon(capy) {
     capy.recolectarBasura(self)
     game.removeTickEvent("cambiarCombustible")
+  }
+}
+
+object bolaDePapel{
+  var impactoEnHuellaDeCarbono = 50
+  var property position = posicionAleatoria.calcular()
+
+  method impactoEnLaHuellaDeCarbono() = impactoEnHuellaDeCarbono
+
+  method nombre() = "bola papel"
+  method image() = self.nombre() + ".png"  
+
+   method esReciclable() = true
+  
+  method tratar() {
+    impactoEnHuellaDeCarbono -= 2
+  }
+
+  method moverLado(){
+    position = position.left(1)
+    if()
+  }
+
+
+  method colisionarCon(capy) {
+    capy.recolectarBasura(self)
+
   }
 }
